@@ -28,8 +28,45 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
 function countScores(people) {
-  // Your code here
+  finalScoreObj = {}
+  for (i in people) {
+    if (people[i].name in finalScoreObj) {
+      // console.log(people[i].name)
+      // console.log("already exists" + finalScoreObj)
+      finalScoreObj[people[i].name] += people[i].score 
+      // console.log(finalScoreObj)     
+    }
+    else {
+      // console.log(people[i].name)
+      // console.log("doesn't exists" + finalScoreObj)
+      finalScoreObj[people[i].name] = people[i].score
+      // console.log(finalScoreObj)     
+
+    }
+    // console.log(people[i].name)
+  }
+  return finalScoreObj
+
 }
+
+
+let ppl = [{name: "Anthony", score: 10},
+            {name: "Fred", score : 10},
+            {name: "Anthony", score: -8},
+            {name: "Winnie", score: 12}];
+
+console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
+
+let peeps = [
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2}
+];
+console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;

@@ -10,8 +10,15 @@ restSum(0); // => 0
 ***********************************************************************/
 
 function restSum(...otherNums) {
-  // Your code here
+  total = 0
+  for (num in otherNums) {
+    total += Number(otherNums[num])
+  }
+  return total
 }
 
+// restSum(3,5,6); // => 14
+// restSum(1, 2, 3, 4, 5, 6, 7, 8, 9); // => 45
+// restSum(0); // => 0
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = restSum;

@@ -13,9 +13,14 @@ let obj1 = {str: "hello"}
 setKeyInObject(obj1, "num", 3); // => {str: "hello", num: 3}
 ***********************************************************************/
 
+
 function setKeyInObject(obj, string, value) {
-  // Your code here
+  // add new key, value pair to object
+  obj[string] = value
+  return obj
 }
 
+// let obj1 = {string: "hello"}
+// setKeyInObject(obj1, "num", 3);
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = setKeyInObject;
